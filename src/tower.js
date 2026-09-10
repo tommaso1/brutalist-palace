@@ -134,18 +134,27 @@ export function createTower(host, onPause) {
   const grid = new THREE.GridHelper(46, 46, 0x574465, 0x302839);
   grid.position.y=-.38; grid.material.transparent=true;grid.material.opacity=.13;scene.add(grid);
 
-  // Layered shader fog gives the base a slow, drifting volume without external assets.
+  // Staggered layers wrap the tower in drifting mist, with most density behind the concrete.
   const fogUniforms = { time:{value:0} };
   const fogMaterial = new THREE.ShaderMaterial({
     uniforms:fogUniforms, transparent:true,depthWrite:false,side:THREE.DoubleSide,
-    vertexShader:'varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
-    fragmentShader:`varying vec2 vUv; uniform float time;
+    vertexShader:'varying vec2 vUv; varying float vLayer; void main(){vUv=uv;vLayer=modelMatrix[3].x+modelMatrix[3].y*2.17;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
+    fragmentShader:`varying vec2 vUv; varying float vLayer; uniform float time;
       float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
       float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
-      void main(){vec2 p=vUv*vec2(6.,3.);p.x+=time*.045;float n=noise(p)*.55+noise(p*2.1-time*.021)*.3+noise(p*4.1)*.15;float edge=pow(max(0.,1.-length((vUv-.5)*2.)),1.6);float a=smoothstep(.19,.8,n)*edge*.10;gl_FragColor=vec4(.20,.17,.26,a);}`
+      void main(){
+        vec2 p=vUv*vec2(5.,3.)+vec2(vLayer*.71,vLayer*.23);
+        p.x+=time*.09;
+        p+=vec2(noise(p*.7+time*.025),noise(p*.8-time*.018))*.65;
+        float n=noise(p)*.55+noise(p*2.1-time*.035)*.3+noise(p*4.1)*.15;
+        float edge=pow(max(0.,1.-length((vUv-.5)*2.)),1.35);
+        float a=smoothstep(.22,.72,n)*edge*.38;
+        gl_FragColor=vec4(.34,.28,.43,a);
+      }`
   });
-  const fogGeometry = new THREE.PlaneGeometry(25,8);
-  for(let i=0;i<4;i++){const mist=new THREE.Mesh(fogGeometry,fogMaterial);mist.position.set((i%2-.5)*3,.45+i*.38,3+i*1.5);mist.rotation.y=.2;scene.add(mist);}
+  const fogGeometry = new THREE.PlaneGeometry(23,7);
+  const fogLayers = [[-2,.65,-4], [2,2.1,-1], [-3,3.6,1], [2,1.15,4], [3,5,-4], [-2,6.2,-2]];
+  for(const position of fogLayers){const mist=new THREE.Mesh(fogGeometry,fogMaterial);mist.position.set(...position);mist.rotation.y=Math.atan2(cameraHome.x,cameraHome.z);scene.add(mist);}
 
   let frame=0, elapsed=0,previous=0,lastRender=0,visible=true, destroyed=false;
   let pointerX=0,pointerY=0;
