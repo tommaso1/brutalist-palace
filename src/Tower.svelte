@@ -19,5 +19,5 @@
 </script>
 
 <div class="tower-view" bind:this={host} aria-label="A three-dimensional brutalist tower with violet neon outlines and drifting fog"></div>
-{#if failed}<img class="tower-fallback" src="/images/the-deluge-painting.jpg" alt="The atmosphere of The Deluge, a painting by Francis Danby" />{/if}
+{#if failed}<img class="tower-fallback" src="/images/the-deluge-painting.jpg" alt="The Deluge by Francis Danby" />{/if}
 {#if available}<button class="motion-toggle" onclick={() => sceneApi?.toggle()} aria-label={paused ? 'Start tower rotation' : 'Pause tower rotation'} aria-pressed={paused}><span aria-hidden="true">{paused ? '▷' : 'Ⅱ'}</span><span>{paused ? 'Resume rotation' : 'Pause rotation'}</span></button>{/if}

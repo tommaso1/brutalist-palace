@@ -26,9 +26,9 @@ The animation respects reduced-motion preferences, includes a pause button, and 
 
 - [The Deluge on Bandcamp](https://brutalistpalace.bandcamp.com/album/the-deluge): published cover, release date, four track names, durations, and production notes, checked September 10, 2026.
 - [Artist Instagram](https://www.instagram.com/brutalist_palace/): supplied by the artist.
-- [Francis Danby, The Deluge — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Francis_Danby_-_The_Deluge_-_Google_Art_Project.jpg): original painting reference and fallback image. The source describes the work as public domain and includes jurisdiction-specific reproduction information.
+- [Francis Danby, The Deluge, Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Francis_Danby_-_The_Deluge_-_Google_Art_Project.jpg): original painting reference and fallback image. The source describes the work as public domain and includes jurisdiction-specific reproduction information.
 - [Barbican architecture](https://www.barbican.org.uk/s/barbicanfacts): architectural inspiration for exposed concrete, repetitive slabs, and structural rhythm. The 3D model is an original composition.
-- [Concrete Slab Wall 02 — Poly Haven](https://polyhaven.com/a/concrete_slab_wall_02): photographed concrete material, released under CC0. Texture maps are included locally; the page makes no request to Poly Haven.
+- [Concrete Slab Wall 02, Poly Haven](https://polyhaven.com/a/concrete_slab_wall_02): photographed concrete material, released under CC0. Texture maps are included locally; the page makes no request to Poly Haven.
 
 The artist biography and portrait were supplied directly by the artist. No analytics, forms, or third-party embeds are included. Space Grotesk is self-hosted through the Fontsource package.
 
