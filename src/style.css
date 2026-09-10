@@ -14,7 +14,7 @@
 @media(max-width:700px){.genre-labels{flex-wrap:wrap;row-gap:8px}.hero-index{display:none}.footer-links a{min-height:44px}.site-header nav a{min-height:44px;display:inline-flex;align-items:center}.portrait figcaption{flex-wrap:wrap}.text-link{gap:28px}.manifesto .eyebrow{white-space:normal}}
 
 /* The shorter copy leaves the music and the sculpture more space. */
-.hero-content h1{margin-bottom:38px}.about .section-shell{padding-bottom:72px}.about-grid{align-items:center}.portrait{max-width:420px;justify-self:end;width:100%}
+.hero-content h1{margin-bottom:38px}.hero-content .button{font-size:1rem}.hero-content .genre-labels{font-size:.875rem}.about .section-shell{padding-bottom:72px}.about-grid{align-items:center}.portrait{max-width:420px;justify-self:end;width:100%}
 @media(max-width:700px){.hero-content h1{margin-bottom:28px}.hero{min-height:770px}.hero-art{top:240px;right:-9%;width:110%;height:500px}.portrait{justify-self:start}.about .section-shell{padding-bottom:48px}}
 .hero-art{mix-blend-mode:screen}
 .tower-view{mask-image:radial-gradient(ellipse 80% 65% at 53% 50%,#000 55%,transparent 90%)}
