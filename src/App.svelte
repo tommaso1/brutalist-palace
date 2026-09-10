@@ -1,5 +1,6 @@
 <script>
   import Tower from './Tower.svelte';
+  const base = import.meta.env.BASE_URL;
   const bandcamp = 'https://brutalistpalace.bandcamp.com/album/the-deluge';
   const instagram = 'https://www.instagram.com/brutalist_palace/';
   const tracks = [
@@ -32,7 +33,7 @@
   <section id="musica" class="release section-shell">
     <div class="section-heading"><p class="eyebrow">01 / Music</p></div>
     <div class="release-grid">
-      <figure class="release-art"><a class="cover-link" href={bandcamp} target="_blank" rel="noreferrer" aria-label="Listen to The Deluge on Bandcamp"><img src="/images/the-deluge-cover.jpg" alt="The Deluge cover: a flood scene painted by Francis Danby" width="1200" height="1200" loading="lazy" /><span class="cover-corner top-left"></span><span class="cover-corner bottom-right"></span></a><figcaption>Artwork: Francis Danby, <a href="https://commons.wikimedia.org/wiki/File:Francis_Danby_-_The_Deluge_-_Google_Art_Project.jpg" target="_blank" rel="noreferrer">The Deluge, c. 1840 ↗</a></figcaption></figure>
+      <figure class="release-art"><a class="cover-link" href={bandcamp} target="_blank" rel="noreferrer" aria-label="Listen to The Deluge on Bandcamp"><img src={base + 'images/the-deluge-cover.jpg'} alt="The Deluge cover: a flood scene painted by Francis Danby" width="1200" height="1200" loading="lazy" /><span class="cover-corner top-left"></span><span class="cover-corner bottom-right"></span></a><figcaption>Artwork: Francis Danby, <a href="https://commons.wikimedia.org/wiki/File:Francis_Danby_-_The_Deluge_-_Google_Art_Project.jpg" target="_blank" rel="noreferrer">The Deluge, c. 1840 ↗</a></figcaption></figure>
       <div class="release-info"><p class="eyebrow violet">EP / 08 SEP 2026 <span class="release-count">04 tracks</span></p><h2>The Deluge</h2>
         <ol class="track-list" aria-label="The Deluge EP track list">{#each tracks as track, index}<li><a href={'https://brutalistpalace.bandcamp.com/track/' + track.slug} target="_blank" rel="noreferrer" aria-label={'Listen to ' + track.title + ' on Bandcamp'}><span class="track-number">0{index+1}</span><span class="track-title">{track.title}</span><span class="track-time">{track.time}</span><span class="track-arrow" aria-hidden="true">↗</span></a></li>{/each}</ol>
         <a class="text-link" href={bandcamp} target="_blank" rel="noreferrer">Listen to the EP on Bandcamp <span aria-hidden="true">↗</span></a>
@@ -43,7 +44,7 @@
     <div class="section-heading"><p class="eyebrow">02 / The project</p></div>
     <div class="about-grid">
       <div class="about-copy"><h2 id="about-title">About</h2><div class="bio-text"><p>I studied electric guitar at AMM and worked in a recording studio before moving into programming.</p><p>I started writing again during Covid. BRUTALIST_PALACE is my solo project. I'd like to play it live someday.</p></div><a class="text-link" href={instagram} target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a></div>
-      <figure class="portrait"><div class="portrait-image"><img src="/images/portrait.jpg" alt="Playing guitar outdoors" width="960" height="1280" loading="lazy" /><div class="portrait-mark" aria-hidden="true">BP<span>_</span></div></div><figcaption>Guitar, synths, production</figcaption></figure>
+      <figure class="portrait"><div class="portrait-image"><img src={base + 'images/portrait.jpg'} alt="Playing guitar outdoors" width="960" height="1280" loading="lazy" /><div class="portrait-mark" aria-hidden="true">BP<span>_</span></div></div><figcaption>Guitar, synths, production</figcaption></figure>
     </div>
 
   </div></section>

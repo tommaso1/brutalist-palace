@@ -35,7 +35,7 @@ export function createTower(host, onPause) {
   const textures = [];
   const loader = new THREE.TextureLoader();
   const texture = (file, color = false) => {
-    const map = loader.load('/textures/concrete/' + file, () => schedule());
+    const map = loader.load(import.meta.env.BASE_URL + 'textures/concrete/' + file, () => schedule());
     map.wrapS = map.wrapT = THREE.RepeatWrapping;
     map.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
     if (color) map.colorSpace = THREE.SRGBColorSpace;

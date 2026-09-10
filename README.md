@@ -34,6 +34,15 @@ The artist biography and portrait were supplied directly by the artist. No analy
 
 ## Hosting
 
-Deployment is manual. Run `npm run build`, then upload the contents of `dist/` to your chosen static web host. There are no publish hooks in the local scripts. The earlier Sites configuration in `.openai/hosting.json` is optional for serving this static export elsewhere. Connecting `brutalistpalace.com` requires configuring the domain with your hosting provider and updating DNS.
+The GitHub Actions workflow in `.github/workflows/pages.yml` builds and deploys `main` to GitHub Pages. Set the repository's Pages source to GitHub Actions before the first run. It can also be started manually from the Actions tab.
+
+The workflow reads the site's base path from GitHub Pages, so image, font, script, and concrete texture URLs work at both a repository path and a custom domain. `npm run dev` continues to serve the site at the local root. To test the GitHub Pages build locally:
+
+```sh
+PAGES_BASE_PATH=/brutalist-palace/ npm run build
+PAGES_BASE_PATH=/brutalist-palace/ npm run preview
+```
+
+For another static host, run `npm run build` and upload the contents of `dist/`. The earlier Sites configuration in `.openai/hosting.json` is not used by GitHub Pages. Connecting `brutalistpalace.com` requires configuring the domain in GitHub Pages and updating DNS.
 
 Local browser screenshots and temporary test output are saved under `output/playwright/` and excluded from Git.
