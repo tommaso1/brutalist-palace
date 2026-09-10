@@ -16,7 +16,7 @@
 <a class="skip-link" href="#musica">Skip to music</a>
 <header class="site-header" id="inizio">
   <a href="#inizio" class="wordmark" aria-label="Brutalist Palace, home">BRUTALIST<span>_</span>PALACE</a>
-  <nav aria-label="Main navigation"><a href="#musica">Music</a><a href="#progetto">The project</a><a class="nav-external" href={instagram} target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Main navigation"><a href="#musica">Music</a><a href="#progetto">The project</a><a class="nav-external" href={bandcamp} target="_blank" rel="noreferrer">Bandcamp <span aria-hidden="true">↗</span></a></nav>
 </header>
 
 <main>
