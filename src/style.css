@@ -21,3 +21,12 @@
 /* Clip the decorative scene without making the hero a scroll container. */
 .hero{overflow:clip}
 @media(max-width:700px){.site-header nav .nav-external{display:none}.site-header nav a{white-space:nowrap}}
+
+/* Links use small graphic markers instead of arrow glyphs. */
+.nav-external{margin-left:0;padding:10px 15px;border:1px solid #ffffff35;border-radius:999px;transition:color .2s,background .2s,border-color .2s,transform .2s}.nav-external:hover{background:var(--violet);border-color:var(--violet);color:var(--bg);transform:translateY(-2px)}
+.button.primary{border-radius:999px;box-shadow:0 12px 34px #c3a9ff1c;transition:background .2s,transform .2s,box-shadow .2s}.button.primary:hover{box-shadow:0 16px 38px #c3a9ff32}.button>span:last-child{display:none}
+.scroll-cue{border-bottom:1px solid #ffffff55;padding-bottom:7px;transition:color .2s,border-color .2s}.scroll-cue:hover{color:var(--violet);border-color:var(--violet)}.scroll-cue>span{display:none}
+.text-link{gap:0;border:1px solid #ffffff35;border-radius:999px;padding:11px 17px;transition:color .2s,background .2s,border-color .2s,transform .2s}.text-link:hover{background:#c3a9ff16;border-color:var(--violet);transform:translateY(-2px)}.text-link span{display:none}
+.track-list a{border-left:2px solid transparent;padding-left:5px;transition:color .2s,background .2s,border-color .2s,padding-left .2s}.track-list a:hover{border-left-color:var(--violet);padding-left:14px}.track-arrow{display:none}
+.release-art figcaption a{border-bottom:1px solid #c3a9ff80;padding-bottom:2px;transition:color .2s,border-color .2s}.release-art figcaption a:hover{border-color:var(--violet)}
+.footer-links a{border-bottom:1px solid #ffffff35;padding-bottom:5px;transition:color .2s,border-color .2s}.footer-links a:hover{border-color:var(--violet)}.footer-links span{display:none}
