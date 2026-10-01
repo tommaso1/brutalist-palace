@@ -17,6 +17,7 @@ npm run dev
 - `src/style.css`: responsive layout, Space Grotesk typography, graphite and violet palette.
 - `src/tower.js`: original procedural 3D brutalist tower with a photographed concrete base and an upper structure drawn in neon outlines. Includes bloom, ground grid, and animated shader fog. No Blender file or external model is needed.
 - `src/Tower.svelte`: deferred scene loading, motion controls, and WebGL fallback.
+- `src/motion.js`: Svelte actions for the staggered scroll reveal and the pointer tilt on the cover. Both are skipped when reduced motion is preferred. The page also has an entrance animation, a film-grain overlay, a sticky header that blurs on scroll, a duotone portrait, and a giant outlined wordmark in the footer.
 - `public/images/`: artist-supplied portrait, published EP cover, and painting fallback.
 - `public/textures/concrete/`: local 1K color, OpenGL normal, and packed ambient-occlusion/roughness maps. UVs are scaled by the physical size of each concrete face.
 
@@ -30,7 +31,7 @@ The animation respects reduced-motion preferences, includes a pause button, and 
 - [Barbican architecture](https://www.barbican.org.uk/s/barbicanfacts): architectural inspiration for exposed concrete, repetitive slabs, and structural rhythm. The 3D model is an original composition.
 - [Concrete Slab Wall 02, Poly Haven](https://polyhaven.com/a/concrete_slab_wall_02): photographed concrete material, released under CC0. Texture maps are included locally; the page makes no request to Poly Haven.
 
-The artist biography and portrait were supplied directly by the artist. No analytics, forms, or third-party embeds are included. Space Grotesk is self-hosted through the Fontsource package.
+The artist biography and portrait were supplied directly by the artist. No analytics or forms are included. The Bandcamp player in the music section is click-to-load: nothing from bandcamp.com is requested until the visitor presses the play button, and the button says so. Because of that no cookie banner is shown. Space Grotesk is self-hosted through the Fontsource package.
 
 ## Hosting
 
